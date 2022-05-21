@@ -1,0 +1,45 @@
+﻿@model HomePageModel
+
+@section Css{
+    <link href="~/MetaMapsTemplate/css/lightslider.css" rel="stylesheet" />
+    <link href="~/MetaMapsTemplate/css/roadmapslider.css" rel="stylesheet" />
+}
+
+<div class="RoadMaps p-5">
+    <div class="container">
+        <ul id="autoWidth" class="cs-hidden">
+            @foreach (var roadMap in Model.RoadMaps)
+            {
+                <li><a asp-controller="RoadMap" asp-action="RoadMapDetail" asp-route-id="@roadMap.Id">
+                    <div class="box">
+                        @if (roadMap.Image == null)
+                        {
+                            <img src="~/Images/RoadMaps/default.png" alt="" class="model">
+                        }
+                        else
+                        {
+                            <img src=~/Images/RoadMaps/@roadMap.Image alt="" class="model">
+                        }
+                        <p class="title">@roadMap.Name</p>
+                        <p class="detail mb-2" style="height: 75px; width: 100%; overflow-y: hidden;">@roadMap.Description</p>
+                    </div></a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/MetaMapsTemplate/js/lightslider.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#autoWidth').lightSlider({
+                autoWidth: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#autoWidth').removeClass('cS-hidden');
+                }
+            });
+        });
+    </script>
+}

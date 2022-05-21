@@ -1,0 +1,102 @@
+﻿@*@model SourcePageModel*@
+@model List<Entities.DTOs.SourceDetailsDto>
+
+@section Css{
+    <link href="~/MetaMapsTemplate/css/resourcesdetail.css" rel="stylesheet" />
+    <link href="~/MetaMapsTemplate/css/resourcemenu.css" rel="stylesheet" />
+}
+
+<div style="background-color: #efefef;">
+    <div class="container p-5">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 px-lg-4">
+
+                @foreach (var source in Model)
+                {
+                    <div class="row justify-content-center py-3">
+                        <div class="p-0" style="border: 1px solid #dedede; background-color: #fff;">
+                            <div class="p-3 m-0">
+                                <img src="~/Images/Users/@source.UserImage" alt="" style="height: 50px; width: 50px; border-radius: 50%;">
+                                <span style="font-size: 20px; padding: 0 0 0 10px;">@source.UserName @source.UserSurname</span>
+                            </div>
+                            <div class="p-3 m-0 box">
+                                <p>@source.Content</p>
+                                <a href="@source.Link">@source.Link</a>
+                            </div>
+
+                            <div class="p-3 m-0 box">
+                                <a asp-action="LikeIncrease" asp-controller="Source" asp-route-sourceId="@source.SourceId" asp-route-branchId="@source.BranchId"><i class="fa-regular fa-star like"></i></a>
+                                <span class="spanEdit">@source.LikesCount Beğeni</span>
+                                <span class="date">@source.Date</span>
+                            </div>
+                            <div class="accordion accordion-flush p-3 m-0 box" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="@source.SourceId">
+                                        <button class="accordion-button collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#@source.OpenComment" aria-expanded="false" aria-controls="@source.OpenComment">
+                                            @source.CommentsCount Yorum
+                                        </button>
+                                    </h2>
+                                    <div id="@source.OpenComment" class="accordion-collapse collapse" aria-labelledby="@source.SourceId" data-bs-parent="#accordionFlushExample">
+
+                                        @foreach (var comment in source.Comments)
+                                        {
+                                            <div class="accordion-body box">
+                                                <div>
+                                                    <img src="~/Images/Users/@comment.UserImage" alt="" style="height: 50px; width: 50px; border-radius: 50%;">
+                                                    <span style="padding-left: 5px; font-weight: bolder;">@comment.UserName @comment.UserSurname</span>
+                                                </div>
+                                                <p style="margin-left:60px; margin-bottom:0px">@comment.Content</p>
+                                            </div>
+                                        }
+                                        <form asp-action="Add" asp-controller="Source" method="post" class="mt-2">
+                                            <input type="hidden" name="sourceId"  value="@source.SourceId" />
+                                            <input type="hidden" name="branchId"  value="@source.BranchId" />
+                                            <input type="text" name="comment" class="form-control" placeholder="Yorumunuz..">
+                                            <div class="text-center pt-2">
+                                                <button type="submit" class="btn btn-sm btn2">Gönder</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+
+
+            <div class="col-lg-4 px-lg-4">
+
+                <div class="row justify-content-center py-3">
+                    <div class="newpost shadow">
+                        <div class="p-3 m-0">
+                            <form asp-action="AddSource" asp-controller="Source" method="post">
+                                <textarea class="form-control" rows="5" name="content" placeholder="Herkesin yararlanması için sende bir kaynak ekle.."></textarea>
+                                <input class="form-control mt-2" type="text" name="link" placeholder="Kaynak Linki" />
+                                <input type="hidden" value="@ViewBag.branchId" name="branchId" />
+                                <div class="text-center pt-3">
+                                    <button class="btn btn2" type="submit">Ekle</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center py-3">
+                    <div class="menu shadow">
+                        <ul>
+                            <li><a asp-action="SourcePage" asp-controller="Source" asp-route-id="@ViewBag.branchId" asp-route-order="2">Beğeni Sayısına Göre Sırala</a></li>
+                            <li><a asp-action="SourcePage" asp-controller="Source" asp-route-id="@ViewBag.branchId" asp-route-order="3">Yorum Sayısına Göre Sırala</a></li>
+                            <li><a asp-action="SourcePage" asp-controller="Source" asp-route-id="@ViewBag.branchId" asp-route-order="1">Tarihe Göre Sırala</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\MetaMapsTemplate\.git\COMMIT_EDITMSG" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\config" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\description" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\HEAD" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\hooks\update.sample" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\index" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\info\exclude" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\logs\HEAD" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\logs\refs\heads\master" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\03\f7a7b5650eb941bcc44921bf0bc3e634a7d432" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\1c\927a4f2f4ed48d50493ff0dd74f1cfdb6e44df" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\20\020a3b689b2e3922efee0bfdd28e7523055df4" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\27\3f79789a988e995b2744d31c3bd9894d2cefd9" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\28\09854ccfcaaac1d2b7941e1006c6cc9c2d0bf9" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\29\ef2f4b8fc2609a6ad59cbff972d001c16e7b64" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\3a\89fdc3369d38c02f3e0357cf631a2d426a2589" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\5d\876ac973cfc433d84466abd0054aca439d5ba3" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\61\307110c1bd5b69cef2c46a726ffc1306a26260" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\69\89f7e9a8b381de1cd5186d680730ae27584e88" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\6d\9c79f05485afb98230144d0bcd80f005ce6251" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\71\4547931468cb83dbae46659cde0c2f2876ac00" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\79\92c1f71413a1e7c6a187b877e6d1c973910845" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\7f\cb324fbcc57918e79fa424c54dac0663fd2a44" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\87\b55d67dc8b42c766e2c3cbe43165388cde2ad6" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\9a\2606e269475816c749654a22903660f07ba55f" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\9b\906fd81c7751bb680124b74f5fae7a8313497e" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\ad\08fc7aac97eede7716c2eb0ace42a50140a381" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\b0\362899923271a9a368676059b1f256b074d4d7" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\b3\45772411c33dddcfce80ddbc222cc0265524f7" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\b9\f3ced0456b626eb80ec6ffe5bd0d681a3af00f" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\c1\1955d26285c8928acff34b917e2c59022b4800" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\ca\a8395b3652c0e27ecda4a1f67e7a430faf9365" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\cb\8fa83eecd6fddc39d2300098f174ffce433146" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\cf\5609ec2d25aa0c24d8ffed4c06c0dd0e8964e2" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\d9\1e6687f4e2d18f6bc23f791a2f265aa2cc4cba" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\df\e700321f7fc9e9851305e500fb34fa69de0049" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\e8\240ed7f834fa919490c3e4710696f2c7270305" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\e9\d1f195f3cc6369eae07f3870445aa8f5795208" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\fa\ec7d21593c22f62b11ef15ecf0ab5851397109" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\objects\fc\6b2be484c9aa603158d65f4c1788d7a6677f11" />
+    <None Include="wwwroot\MetaMapsTemplate\.git\refs\heads\master" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="wwwroot\MetaMapsTemplate\.git\objects\info\" />
+    <Folder Include="wwwroot\MetaMapsTemplate\.git\objects\pack\" />
+    <Folder Include="wwwroot\MetaMapsTemplate\.git\refs\tags\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+
+</Project>

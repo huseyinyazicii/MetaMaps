@@ -1,0 +1,29 @@
+﻿@model AddRoadMapModel
+
+<h1 class="text-center">Yeni Yol Haritası Ekle</h1>
+<div class="row justify-content-center align-items-center">
+    <div class="col-xl-4 col-md-6 col-11">
+        <form asp-action="FirstAdd" asp-controller="RoadMap" asp-area="Admin" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Yol Haritasının İsmi</label>
+                <input asp-for="Name" type="text" class="form-control" placeholder=".Net Yol Haritası">
+                <span class="form-text text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Image" class="form-label">Resim</label>
+                <input asp-for="Image" class="form-control-file" onchange="readURL(this);" type="file" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">Açıklama</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span class="form-text text-danger" asp-validation-for="Description"></span>
+            </div>
+            <div class="text-center">
+                <button class="btn btn2">Sırakdi Adıma Geç</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-xl-4 col-md-6 col-11 text-center">
+        <img id="image" src="~/MetaMapsTemplate/img/game.png" alt="your image" />
+    </div>
+</div>

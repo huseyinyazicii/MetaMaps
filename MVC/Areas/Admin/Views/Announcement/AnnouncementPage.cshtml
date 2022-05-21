@@ -1,0 +1,33 @@
+﻿@model List<Entities.Concrete.Announcement>
+
+<h1 class="mb-3">
+    Duyurular
+    <a asp-action="Old" asp-controller="Announcement" asp-area="Admin" class="btn btn2 ml-2" style="float: right;">Eski Duyurular</a>
+    <a asp-action="Add" asp-controller="Announcement" asp-area="Admin" class="btn btn2" style="float: right;">Duyuru Ekle</a>
+</h1>
+
+<table class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">BAŞLIK</th>
+            <th scope="col">İÇERİK</th>
+            <th scope="col">TARİH</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var announcement in Model)
+        {
+            <tr>
+                <th scope="row">@announcement.Id</th>
+                <td>@announcement.Title</td>
+                <td>@announcement.Content</td>
+                <td>@announcement.Date</td>
+                <td><a class="btn btn1"  asp-action="Update" asp-route-id="@announcement.Id" asp-controller="Announcement" asp-area="Admin">Güncelle</a></td>
+                <td><a class="btn btn1" asp-action="ChangeStatus" asp-route-id="@announcement.Id" asp-route-status="false" asp-controller="Announcement" asp-area="Admin">Kaldır</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@{ 
+    Layout = null;
+}
+
+<ul class="sidebar navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" asp-action="AnnouncementPage" asp-controller="Announcement" asp-area="Admin">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Duyurular</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="BranchPage" asp-controller="Branch" asp-area="Admin">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Dallar</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="CreaterPage" asp-controller="Creater" asp-area="Admin">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Geliştiriciler</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="RoadMapPage" asp-controller="RoadMap" asp-area="Admin">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Yol Haritaları</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="StepPage" asp-controller="Step" asp-area="Admin">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Adımlar</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="UserList" asp-controller="Admin" asp-area="Admin">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Kullanıcılar</span>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,49 @@
+﻿@model UserDetailsModel
+
+<h1 class="mb-3">
+    Kullanıcı Düzenle
+    <a asp-action="RoleList" asp-controller="Admin" asp-area="Admin" class="btn btn-primary" style="float: right;">Roller</a>
+</h1>
+
+<form asp-action="UserEdit" asp-controller="Admin" asp-area="Admin" method="post">
+    <input type="hidden" name="UserId" value="@Model.UserId" />
+
+    <div class="form-group">
+        <label asp-for="Name">İsim</label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span class="form-text text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UserName">Kullanıcı Adı</label>
+        <input type="text" class="form-control" asp-for="UserName">
+        <span class="form-text text-danger" asp-validation-for="UserName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email Adresi</label>
+        <input type="text" class="form-control" asp-for="Email">
+        <span class="form-text text-danger" asp-validation-for="Email"></span>
+    </div>
+
+    @foreach (var roleName in ViewBag.Roles)
+    {
+        <div class="form-group form-check text-center">
+            <input type="checkbox"
+                   class="form-check-input"
+                   name="selectedRoles"
+                   value="@roleName"
+                   id="@roleName"
+                   @(Model.SelectedRoles.Any(i => i == roleName) ? "checked" : "") />
+            <label class="form-check-label" for="@roleName">@roleName</label>
+        </div>
+    }
+
+    <div class="form-group form-check text-center">
+        <input asp-for="EmailConfirmed" type="checkbox" class="form-check-input">
+        <label class="form-check-label" asp-for="EmailConfirmed">Email Doğrulama</label>
+    </div>
+
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-warning">Kaydet</button>
+    </div>
+</form>

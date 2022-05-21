@@ -1,0 +1,30 @@
+﻿@model List<Entities.Concrete.Comment>
+
+<h1 class="mb-3">
+    Yorumlar - @Model[0].SourceId
+</h1>
+
+<table class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">UserId</th>
+            <th scope="col">İçerik</th>
+            <th scope="col">Tarih</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var comment in Model)
+        {
+            <tr>
+                <th scope="row">@comment.Id</th>
+                <td>@comment.UserId</td>
+                <td>@comment.Content</td>
+                <td>@comment.Date</td>
+                <td><a class="btn btn1" asp-action="DeleteComment" asp-route-id="@comment.Id" asp-controller="Source" asp-area="Admin">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

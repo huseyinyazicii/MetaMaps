@@ -1,0 +1,18 @@
+﻿@model BranchModel
+
+<h1 class="mb-3">
+    Dal Güncelle
+    <a asp-action="BranchPage" asp-controller="Branch" asp-area="Admin" class="btn btn2" style="float: right;">Dallar</a>
+</h1>
+
+<form asp-action="Update" asp-controller="Branch" asp-area="Admin" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Başlık</label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span class="form-text text-danger" asp-validation-for="Name"></span>
+    </div>
+    <input asp-for="Id" type="hidden" />
+    <div class="text-center">
+        <button type="submit" class="btn btn1">Güncelle</button>
+    </div>
+</form>

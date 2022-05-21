@@ -1,0 +1,61 @@
+﻿@model List<Entities.Concrete.Branch>
+
+@section Css{
+    <link href="~/Libraries/DataTables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+<h1 class="mb-3">
+    Dallar
+    <a asp-action="Add" asp-controller="Branch" asp-area="Admin" class="btn btn2" style="float: right;">Dal Ekle</a>
+</h1>
+
+<table id="myTable" class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim</th>
+            <th scope="col">Durum</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model)
+        {
+            var changeStatus = branch.Status ? "Kaldır" : "Ekle";
+        <tr>
+            <th scope="row">@branch.Id</th>
+            <td>@branch.Name</td>
+            <td>@branch.Status</td>
+            <td><a class="btn btn1" asp-action="Update" asp-route-id="@branch.Id" asp-controller="Branch" asp-area="Admin">Güncelle</a></td>
+            <td><a class="btn btn1" asp-action="ChangeStatus" asp-route-id="@branch.Id" asp-route-status="@branch.Status" asp-controller="Branch" asp-area="Admin">@changeStatus</a></td>
+            <td><a class="btn btn1" asp-action="SourcePage" asp-route-id="@branch.Id" asp-controller="Source" asp-area="Admin">Kaynaklar</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script src="~/Libraries/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Libraries/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                pageLength: 10,
+                lengthMenu: [[5, 10, 20, 50, -1], [5, 10, 20, 50, "Hepsi"]],
+                language: {
+                    search: "Dal Ara ",
+                    lengthMenu: "Göster _MENU_ Kelime",
+                    info: "_TOTAL_ kelimenin _START_ - _END_ arasındakiler gösteriliyor",
+                    paginate: {
+                        first: "Premier",
+                        previous: "Önceki",
+                        next: "Sonraki",
+                        last: "Dernier"
+                    }
+                }
+            });
+        })
+    </script>
+}

@@ -1,0 +1,69 @@
+﻿@model CreaterModel
+
+<h1 class="mb-3">
+    Geliştirici Ekle
+    <a asp-action="CreaterPage" asp-controller="Creater" asp-area="Admin" class="btn btn2" style="float: right;">Geliştiriciler</a>
+</h1>
+
+<form asp-action="Add" asp-controller="Creater" asp-area="Admin" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name">İsim</label>
+                <input type="text" class="form-control" asp-for="Name">
+                <span class="form-text text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname">Soyisim</label>
+                <input type="text" class="form-control" asp-for="Surname">
+                <span class="form-text text-danger" asp-validation-for="Surname"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input type="email" class="form-control" asp-for="Email">
+                <span class="form-text text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image">Resim</label>
+                <input type="file" class="form-control-file" asp-for="Image">
+            </div>
+            <div class="form-group">
+                <label asp-for="Details">Detaylar</label>
+                <textarea rows="3" class="form-control-file" asp-for="Details"></textarea>
+                <span class="form-text text-danger" asp-validation-for="Details"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Youtube">Youtube</label>
+                <input type="text" class="form-control" asp-for="Youtube">
+                <span class="form-text text-danger" asp-validation-for="Youtube"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Linkedin">Linkedin</label>
+                <input type="text" class="form-control" asp-for="Linkedin">
+                <span class="form-text text-danger" asp-validation-for="Linkedin"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Github">Github</label>
+                <input type="text" class="form-control" asp-for="Github">
+                <span class="form-text text-danger" asp-validation-for="Github"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Instagram">Instagram</label>
+                <input type="text" class="form-control" asp-for="Instagram">
+                <span class="form-text text-danger" asp-validation-for="Instagram"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Twitter">Twitter</label>
+                <input type="text" class="form-control" asp-for="Twitter">
+                <span class="form-text text-danger" asp-validation-for="Twitter"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn1">Ekle</button>
+    </div>
+</form>

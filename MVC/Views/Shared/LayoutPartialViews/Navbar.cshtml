@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container py-2">
+        <a class="main-logo" href="#">METAMAPS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li><a asp-action="RoadMaps" asp-controller="RoadMap">Yol Haritaları</a></li>
+                <li><a asp-action="AnnouncementPage" asp-controller="Announcement">Duyurular</a></li>
+                <li><a asp-action="ContactPage" asp-controller="Contact">İletişim</a></li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a asp-action="Details" asp-controller="Profile">Profil</a></li>
+                    <li><a asp-action="Logout" asp-controller="Security">Çıkış</a></li>
+                }
+                else
+                {
+                    <li><a asp-action="Login" asp-controller="Security">Giriş Yap</a></li>
+                    <li><a asp-action="Register" asp-controller="Security">Üye Ol</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

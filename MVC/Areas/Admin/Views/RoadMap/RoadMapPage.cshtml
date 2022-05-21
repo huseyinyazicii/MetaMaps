@@ -1,0 +1,30 @@
+﻿@model List<Entities.Concrete.RoadMap>
+
+<h1 class="mb-3">
+    Yol Haritaları
+    <a asp-action="FirstAdd" asp-controller="RoadMap" asp-area="Admin" class="btn btn2" style="float: right;">Yol Haritası Ekle</a>
+</h1>
+
+<table class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsmi</th>
+            <th scope="col">Açıklama</th>
+            @*<th></th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var roadMap in Model)
+        {
+            <tr>
+                <th scope="row">@roadMap.Id</th>
+                <td>@roadMap.Name</td>
+                <td>@roadMap.Description</td>
+                @*<td><a class="btn btn1" asp-action="Update" asp-route-id="@roadMap.Id" asp-controller="RoadMap" asp-area="Admin">Güncelle</a></td>*@
+                <td><a class="btn btn1" asp-action="Delete" asp-route-id="@roadMap.Id"  asp-controller="RoadMap" asp-area="Admin">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿@model List<Entities.Concrete.RoadMap>
+
+@section Css{ 
+    <link href="~/MetaMapsTemplate/css/maps.css" rel="stylesheet" />
+}
+
+<div class="title">
+    <h1>YOL HARİTALARI</h1>
+</div>
+
+<div class="container p-5">
+    <div class="row justify-content-center">
+
+        @foreach (var roadMap in Model)
+        {
+            <div class="col-md-6 col-12 box">
+                <div class="row">
+                    <div class="col-md-4 img">
+                        @if (roadMap.Image == null)
+                        {
+                            <img src="~/Images/RoadMaps/default.png" class="img-fluid rounded-start" alt="...">
+                        }
+                        else
+                        {
+                            <img src=~/Images/RoadMaps/@roadMap.Image class="img-fluid rounded-start" alt="...">
+                        }
+                    </div>
+                    <div class="col-md-8 p-0 align-self-center ">
+                        <div class="card-body">
+                            <h5 class="card-title">@roadMap.Name</h5>
+                            <p class="card-text">@roadMap.Description</p>
+                            <a asp-controller="RoadMap" asp-action="RoadMapDetail" asp-route-id="@roadMap.Id" class="btn btn1">İNCELE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

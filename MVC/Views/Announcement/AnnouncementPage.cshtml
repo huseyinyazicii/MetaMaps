@@ -1,0 +1,31 @@
+﻿@model List<Entities.Concrete.Announcement>
+
+@{ 
+    string[] monthes = { "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" };
+}
+
+<div class="p-5 text-center" style="background-color: #efefef;">
+    <h1 style="color:#0F4C75 ;">DUYURULAR</h1>
+</div>
+
+<div class="p-5">
+    <div class="container">
+
+        @foreach (var announcement in Model)
+        {
+            <div class="row justify-content-center mb-4">
+                <div class="col-xl-1 col-sm-2 d-none d-sm-block p-3" style="background-color: #dedede; border-radius: 10px 0 0 10px;">
+                    <div class="text-center" style="background-color: #0F4C75; height: 75px; width: 75px;float:left;">
+                        <p style="color:white; font-size: 25px; margin: 0;">@announcement.Date.Day</p>
+                        <p style="color:white; font-size: 15px; margin: 0;">@monthes[announcement.Date.Month - 1]</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-8 col-9 p-3" style="background-color: #dedede; border-radius: 0 10px 10px 0;">
+                    <p style="margin-bottom: 10px; font-weight: bolder; font-size: 20px">@announcement.Title</p>
+                    <p style="margin: 0; font-weight: lighter;">@announcement.Content</p>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

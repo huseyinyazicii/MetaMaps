@@ -1,0 +1,35 @@
+﻿@model List<Entities.Concrete.Source>
+
+<h1 class="mb-3">
+    Kaynaklar - @Model[0].BranchId
+</h1>
+
+<table class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">UserId</th>
+            <th scope="col">BranchId</th>
+            <th scope="col">İçerik</th>
+            <th scope="col">Link</th>
+            <th scope="col">Tarih</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var source in Model)
+        {
+            <tr>
+                <th scope="row">@source.Id</th>
+                <td>@source.UserId</td>
+                <td>@source.BranchId</td>
+                <td>@source.Content</td>
+                <td>@source.Link</td>
+                <td>@source.Date</td>
+                <td><a class="btn btn1" asp-action="Comments" asp-route-id="@source.Id" asp-controller="Source" asp-area="Admin">Yorumlar</a></td>
+                <td><a class="btn btn1" asp-action="Delete" asp-route-id="@source.Id"  asp-controller="Source" asp-area="Admin">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

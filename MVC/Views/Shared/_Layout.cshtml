@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - MVC</title>
+
+    <link href="~/Libraries/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Libraries/FontAwesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/MetaMapsTemplate/css/navbar.css" rel="stylesheet" />
+    <link href="~/MetaMapsTemplate/css/site.css" rel="stylesheet" />
+    @RenderSection("Css", false)
+</head>
+<body>
+
+    <partial name="~/Views/Shared/LayoutPartialViews/Navbar.cshtml" />
+
+    @RenderBody()
+
+    <partial name="~/Views/Shared/LayoutPartialViews/Footer.cshtml" />
+
+    <script src="~/Libraries/Jquery/jquery.min.js"></script>
+    <script src="~/Libraries/Jquery-Validate/jquery.validate.min.js"></script>
+    <script src="~/Libraries/Jquery-Validate-Unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Libraries/Bootstrap/js/bootstrap.bundle.min.js"></script>
+    @await Component.InvokeAsync("Notyf")
+
+    @RenderSection("Scripts", false)
+</body>
+</html>

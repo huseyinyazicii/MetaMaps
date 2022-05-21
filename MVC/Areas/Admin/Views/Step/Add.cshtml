@@ -1,0 +1,17 @@
+﻿@model StepModel
+
+<h1 class="mb-3">
+    Adım Ekle
+    <a asp-action="StepPage" asp-controller="Step" asp-area="Admin" class="btn btn2" style="float: right;">Adımlar</a>
+</h1>
+
+<form asp-action="Add" asp-controller="Step" asp-area="Admin" method="post">
+    <div class="form-group">
+        <label asp-for="Name">Adım İsmi</label>
+        <input class="form-control" type="text" asp-for="Name" />
+        <span class="form-text text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn1">Ekle</button>
+    </div>
+</form>

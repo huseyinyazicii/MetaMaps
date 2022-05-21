@@ -1,0 +1,36 @@
+﻿@model RoadMapDetailDto  
+
+@section Css{
+    <link href="~/MetaMapsTemplate/css/roadmapdetail.css" rel="stylesheet" />
+}
+
+<div class="title">
+    <h1>.NET YOL HARİTASI</h1>
+</div>
+
+<!-- Bilgiler gelebilir -->
+
+<div class="container p-5">
+    <div class="row justify-content-center">
+
+        @for (int i = 0; i < Model.Steps.Count; i++)
+        {
+            <div class="col-xl-8 step">
+                <div class="alert">@Model.Steps[i].Name</div>
+                @for (int j = 0; j < Model.Steps[i].Branches.Count; j++)
+                {
+                    <a asp-action="SourcePage" asp-controller="Source" asp-route-id="@Model.Steps[i].Branches[j].Id" ><span class="badge">@Model.Steps[i].Branches[j].Name</span></a>
+                }
+            </div>
+
+            <div class="col-12 arrow">
+                <img src="~/MetaMapsTemplate/img/downOk.png" alt="">
+            </div>
+        }
+
+        <div class="col-8 step">
+            <div class="alert m-0">Öğrenmeye Devam Et!</div>
+        </div>
+
+    </div>
+</div>

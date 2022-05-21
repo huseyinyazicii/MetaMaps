@@ -1,0 +1,28 @@
+﻿@model List<Entities.Concrete.Step>
+
+<h1 class="mb-3">
+    Adımlar
+    <a asp-action="Add" asp-controller="Step" asp-area="Admin" class="btn btn2" style="float: right;">Adım Ekle</a>
+</h1>
+
+<table class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var step in Model)
+        {
+            <tr>
+                <th scope="row">@step.Id</th>
+                <td>@step.Name</td>
+                <td><a class="btn btn1" asp-action="Update" asp-route-id="@step.Id" asp-controller="Step" asp-area="Admin">Güncelle</a></td>
+                <td><a class="btn btn1" asp-action="Delete" asp-route-id="@step.Id" asp-controller="Step" asp-area="Admin">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

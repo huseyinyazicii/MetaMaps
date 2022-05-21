@@ -1,0 +1,34 @@
+﻿@model List<Entities.Concrete.Message>
+
+<h1 class="mb-3">
+    Mesajlar
+    <a asp-action="Old" asp-controller="Message" asp-area="Admin" class="btn btn2" style="float: right;">Okunmuş Mesajlar</a>
+</h1>
+
+<table class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim</th>
+            <th scope="col">Email</th>
+            <th scope="col">Konu</th>
+            <th scope="col">Mesaj</th>
+            <th scope="col">Tarih</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mesaj in Model)
+        {
+            <tr>
+                <th scope="row">@mesaj.Id</th>
+                <td>@mesaj.UserName</td>
+                <td>@mesaj.UserMail</td>
+                <td>@mesaj.Topic</td>
+                <td>@mesaj.Content</td>
+                <td>@mesaj.Date</td>
+                <td><a class="btn btn1" asp-action="ChangeStatus" asp-route-id="@mesaj.Id" asp-controller="Message" asp-area="Admin">Kaldır</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

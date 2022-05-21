@@ -1,0 +1,36 @@
+﻿@model List<Entities.Concrete.Creater>
+
+<h1 class="mb-3">
+    Proje Geliştiricileri
+    <a asp-action="Add" asp-controller="Creater" asp-area="Admin" class="btn btn2" style="float: right;">Geliştirici Ekle</a>
+</h1>
+
+<table class="table text-center table-bordered shadow">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim Soyisim</th>
+            <th scope="col">Email</th>
+            <th scope="col">Durum</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var creater in Model)
+        {
+            var changeStatus = creater.Status ? "Kaldır" : "Ekle";
+
+            <tr>
+                <th scope="row">@creater.Id</th>
+                <td>@creater.Name @creater.Surname</td>
+                <td>@creater.Email</td>
+                <td>@creater.Status</td>
+                <td><a class="btn btn1" asp-action="Update" asp-route-id="@creater.Id" asp-controller="Creater" asp-area="Admin">Güncelle</a></td>
+                <td><a class="btn btn1" asp-action="ChangeStatus" asp-route-id="@creater.Id" asp-route-status="@creater.Status" asp-controller="Creater" asp-area="Admin">@changeStatus</a></td>
+                <td><a class="btn btn1" asp-action="Delete" asp-route-id="@creater.Id" asp-controller="Creater" asp-area="Admin">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
