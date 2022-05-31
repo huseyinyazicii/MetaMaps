@@ -4,8 +4,8 @@
     string[] monthes = { "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" };
 }
 
-<div class="p-5 text-center" style="background-color: #efefef;">
-    <h1 style="color:#0F4C75 ;">DUYURULAR</h1>
+<div class="p-5 text-center" style="border-bottom: 1px solid #dedede">
+    <h1 class="box-title">DUYURULAR</h1>
 </div>
 
 <div class="p-5">
@@ -14,8 +14,8 @@
         @foreach (var announcement in Model)
         {
             <div class="row justify-content-center mb-4">
-                <div class="col-xl-1 col-sm-2 d-none d-sm-block p-3" style="background-color: #dedede; border-radius: 10px 0 0 10px;">
-                    <div class="text-center" style="background-color: #0F4C75; height: 75px; width: 75px;float:left;">
+                <div class="col-xl-1 col-sm-2 d-none d-sm-block p-3" style="background-color: #E0E1DD; border-radius: 10px 0 0 10px;">
+                    <div class="text-center" style="background-color: #1B263B; height: 75px; width: 75px; float: left; ">
                         <p style="color:white; font-size: 25px; margin: 0;">@announcement.Date.Day</p>
                         <p style="color:white; font-size: 15px; margin: 0;">@monthes[announcement.Date.Month - 1]</p>
                     </div>

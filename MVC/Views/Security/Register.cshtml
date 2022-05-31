@@ -1,80 +1,46 @@
 ﻿@model RegisterViewModel
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Üye Ol</title>
-    <link href="~/Libraries/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/MetaMapsTemplate/css/login.css" rel="stylesheet" />
-</head>
-<body>
-    <section class="vh-100">
-        <div class="container py-5 h-100">
-            <div class="row d-flex align-items-center justify-content-center h-100">
-                <div class="col-md-8 col-lg-7 col-xl-6">
-                    <img src="~/MetaMapsTemplate/img/loginPicture.svg" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 mb-3">
-                    <h1 class="text-center pb-2">Üye Ol</h1>
-                    <form asp-controller="Security" asp-action="Register" method="post">
-                        <div class="form-outline mb-4">
-                            <label class="form-label" asp-for="Name">İsim</label>
-                            <input type="text" asp-for="Name" class="form-control form-control-lg" />
-                            <span class="text-danger" asp-validation-for="Name"></span>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label" asp-for="Surname">Soyisim</label>
-                            <input type="text" asp-for="Surname" class="form-control form-control-lg" />
-                            <span class="text-danger" asp-validation-for="Surname"></span>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label" asp-for="Email">Email Adresi</label>
-                            <input type="email" asp-for="Email" class="form-control form-control-lg" />
-                            <span class="text-danger" asp-validation-for="Email"></span>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label" asp-for="UserName">Kullanıcı Adı</label>
-                            <input type="text" asp-for="UserName" class="form-control form-control-lg" />
-                            <span class="text-danger" asp-validation-for="UserName"></span>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label" asp-for="Password">Şifre</label>
-                            <input type="password" asp-for="Password" class="form-control form-control-lg" />
-                            <span class="text-danger" asp-validation-for="Password"></span>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label" asp-for="ConfirmPassword">Şifre Onayla</label>
-                            <input type="password" asp-for="ConfirmPassword" class="form-control form-control-lg" />
-                            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
-                        </div>
-
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Üye Ol</button>
-                        </div>
-
-                        <div class="divider d-flex align-items-center my-4">
-                            <p class="text-center fw-bold mx-3 mb-0 text-muted">Yada</p>
-                        </div>
-
-                        <div class="d-grid gap-2 mb-3">
-                            <a asp-action="Login" asp-controller="Security" type="submit" class="btn btn-primary btn-lg btn-block">Giriş Yap</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<div class="container-fluid h-custom" style="padding:100px 10px">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="~/MetaMapsTemplate/img/loginPicture.svg" class="img-fluid" alt="Sample image">
         </div>
-    </section>
-
-    <script src="~/Libraries/Jquery/jquery.min.js"></script>
-    <script src="~/Libraries/Bootstrap/js/bootstrap.bundle.min.js"></script>
-    @await Component.InvokeAsync("Notyf")
-
-</body>
-</html>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <h1 class="text-center pb-2 box-title">Üye Ol</h1>
+            <form asp-controller="Security" asp-action="Register" method="post">
+                <div class="mb-3">
+                    <input type="text" asp-for="Name" class="form-control" placeholder="İsim" />
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="text" asp-for="Surname" class="form-control" placeholder="Soyisim" />
+                    <span class="text-danger" asp-validation-for="Surname"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="email" asp-for="Email" class="form-control" placeholder="Email" />
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="email" asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı" />
+                    <span class="text-danger" asp-validation-for="UserName"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="email" asp-for="Password" class="form-control" placeholder="Şifre" />
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="email" asp-for="ConfirmPassword" class="form-control" placeholder="Şifre Onayla" />
+                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                </div>
+                <div class="text-center text-center  mt-4 pt-2">
+                    <button type="submit" class="btn btn1" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                        Üye Ol
+                    </button>
+                    <p class="small fw-bold mt-2 pt-1 mb-0">
+                        Zaten Üye misiniz? <a asp-action="Login" asp-controller="Security" style="color: #415A77">Giriş Yap</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

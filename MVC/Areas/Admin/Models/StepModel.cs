@@ -12,7 +12,7 @@ namespace MVC.Areas.Admin.Models
 
         [Required(ErrorMessage = "İsim zorunlu alandır.")]
         [MaxLength(100, ErrorMessage = "Maximum 100 karakter içerebilir")]
-        [MinLength(5, ErrorMessage = "Minimum 5 karakter içermelidir.")]
+        [MinLength(2, ErrorMessage = "Minimum 2 karakter içermelidir.")]
         public string Name { get; set; }
     }
 }

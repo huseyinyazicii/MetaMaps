@@ -9,7 +9,8 @@ namespace DataAccess.Concrete.EntityFramework.Context
         {
             optionsBuilder.UseSqlServer(@"Server = DESKTOP-HIGG7H3; Database=MetaMaps; Trusted_Connection=true");
         }
-
+        //
+        // Server = DESKTOP-HIGG7H3; Database=MetaMaps; Trusted_Connection=true
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Comment> Comments { get; set; }

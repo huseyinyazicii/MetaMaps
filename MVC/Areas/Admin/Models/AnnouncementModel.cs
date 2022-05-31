@@ -11,7 +11,7 @@ namespace MVC.Areas.Admin.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Başlık alanı zorunludur.")]
-        [MinLength(5, ErrorMessage = "Minimum 5 karakter içermelidir.")]
+        [MinLength(2, ErrorMessage = "Minimum 2 karakter içermelidir.")]
         [MaxLength(100,ErrorMessage = "Maximum 100 karakter girilebilir.")]
         public string Title { get; set; }
 

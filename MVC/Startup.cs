@@ -2,6 +2,7 @@ using AspNetCoreHero.ToastNotification;
 using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
+using DataAccess.Concrete.EntityFramework.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -40,8 +41,9 @@ namespace MVC
             });
 
             // Identity Configurations
+            // workstation id=MetaMaps.mssql.somee.com;packet size=4096;user id=huseyinyazici_SQLLogin_1;pwd=blxlu3kell;data source=MetaMaps.mssql.somee.com;persist security info=False;initial catalog=MetaMaps
 
-            var connection = @"Server = DESKTOP-HIGG7H3; Database=MetaMaps; Trusted_Connection=true";
+            var connection = @"Server = DESKTOP-HIGG7H3; Database=MetaMaps; Trusted_Connection=true;";
             services.AddDbContext<IdentityContext>(options => options.UseSqlServer(connection));
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
 
@@ -112,7 +114,7 @@ namespace MVC
                 {
                     endpoints.MapControllerRoute(
                       name: "areas",
-                      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                      pattern: "{area:exists}/{controller=Announcement}/{action=AnnouncementPage}/{id?}" 
                     );
                 });
 

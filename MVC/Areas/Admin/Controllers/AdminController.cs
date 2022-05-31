@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize] // (Roles = "admin")
+    [Authorize(Roles = "admin")] // (Roles = "admin")
     public class AdminController : Controller
     {
         private UserManager<User> _userManager;

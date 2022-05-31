@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class HomeController : Controller
     {
         public IActionResult HomePage()

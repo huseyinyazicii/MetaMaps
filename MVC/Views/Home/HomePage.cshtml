@@ -5,8 +5,20 @@
     <link href="~/MetaMapsTemplate/css/roadmapslider.css" rel="stylesheet" />
 }
 
+<div class="hero">
+    <h1>Alanına ait kaynaklara <span>kolayca ulaş</span></h1>
+    <p>İlgilendiğin veya kendini geliştirmek istediğin yazılım alanında kullanılan teknolojilere, araçlara ve en sık
+    kullanılan kütüphanelere yol haritası şeklinde erişebilir ve bunlarla ilgili paylaşılan kaynaklara göz atabilirsin.
+    </p>
+    <a asp-controller="RoadMap" asp-action="RoadMaps" class="btn hero-button">Hemen Başla</a>
+    <div>
+        <img src="~/MetaMapsTemplate/img/hero.png" />
+    </div>
+</div>
+
 <div class="RoadMaps p-5">
     <div class="container">
+        <h1 class="roadmap-title">Yol Haritaları</h1>
         <ul id="autoWidth" class="cs-hidden">
             @foreach (var roadMap in Model.RoadMaps)
             {

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class AnnouncementController : Controller
     {
         IAnnouncementService _announcementService;

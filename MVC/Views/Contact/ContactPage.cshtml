@@ -5,104 +5,106 @@
     <link href="~/MetaMapsTemplate/css/developers.css" rel="stylesheet" />
 }
 
-<div class="contact-page">
-    <div class="developer">
-        <div class="container">
-            <h1>Proje Geliştiricileri</h1>
-            <div class="row">
+<div class="p-5 text-center" style="border-bottom: 1px solid #dedede">
+    <h1 class="box-title">İLETİŞİM</h1>
+</div>
 
-                @foreach (var creater in Model.Creaters)
-                {
-                    <div class="col-xl-3 col-sm-6 mb-5">
-                        <div class="profile-card">
-                            <div class="image">
-                                @if (creater.Image == null)
-                                {
-                                    <img src="~/Images/Creaters/default.png" alt="">
-                                }
-                                else
-                                {
-                                    <img src=~/Images/Creaters/@creater.Image alt="">
-                                }
-                            </div>
-                            <div class="profile">
-                                <h4>@creater.Name @creater.Surname</h4>
-                                <div class="mb-4">
-                                    <ul class="list-unstyled list-inline">
-                                        <li class="list-inline-item display-5"><a target="_blank" href="@creater.Youtube"><i class="fab fa-youtube"></i></a></li>
-                                        <li class="list-inline-item display-5"><a target="_blank" href="@creater.Instagram"><i class="fab fa-instagram"></i></a></li>
-                                        <li class="list-inline-item display-5"><a target="_blank" href="@creater.Github"><i class="fab fa-github"></i></a></li>
-                                        <li class="list-inline-item display-5"><a target="_blank" href="@creater.Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+<div class="p-5" style="border-bottom: 1px solid #dedede">
+    <div class="container">
+        <div class="row message-area">
+            <div class="col-lg-6 information">
+                <div>
+                    <div class="contact-card">
+                        <i class="contact-icon fas fa-envelope"></i>
+                        <div class="card-content">
+                            <h3>Email</h3>
+                            <span>CodingUniverse@gmail.com</span>
                         </div>
                     </div>
-                }
-
+                    <div class="contact-card">
+                        <i class="contact-icon fas fa-phone"></i>
+                        <div class="card-content">
+                            <h3>Phone Number</h3>
+                            <span>+905551234567</span>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="contact-icon fas fa-map-marker-alt"></i>
+                        <div class="card-content">
+                            <h3>Location</h3>
+                            <span>Turkey</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 msg">
+                <form asp-action="ContactPage" asp-controller="Contact" method="post">
+                    <div class="mb-3">
+                        <label asp-for="Message.UserName" class="form-label">İsim</label>
+                        <input type="text" class="form-control" asp-for="Message.UserName">
+                        <span class="text-danger" asp-validation-for="Message.UserName"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Message.UserMail" class="form-label">Email</label>
+                        <input type="email" class="form-control" asp-for="Message.UserMail">
+                        <span class="text-danger" asp-validation-for="Message.UserMail"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Message.Topic" class="form-label">Konu</label>
+                        <input type="text" class="form-control" asp-for="Message.Topic">
+                        <span class="text-danger" asp-validation-for="Message.Topic"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Message.Content" class="form-label">Mesajınız</label>
+                        <textarea class="form-control" asp-for="Message.Content" rows="3"></textarea>
+                        <span class="text-danger" asp-validation-for="Message.Content"></span>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn2">GÖNDER</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <hr style="margin: 0; height: 5px; color: #1B263B; opacity: 1;" />
+<div class="p-5 text-center" style="border-bottom: 1px solid #dedede">
+    <h1 class="box-title">GELİŞTİRİCİLER</h1>
+</div>
 
-    <div class="contact">
-        <div class="container">
-            <h1>Mesaj Gönder</h1>
-            <div class="row message-area">
-                <div class="col-lg-6 information">
-                    <div>
-                        <div class="contact-card">
-                            <i class="contact-icon fas fa-envelope"></i>
-                            <div class="card-content">
-                                <h3>Email</h3>
-                                <span>CodingUniverse@gmail.com</span>
-                            </div>
+<div class="p-5 developer">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var creater in Model.Creaters)
+            {
+                <div class="col-xl-3 col-sm-6 mb-5">
+                    <div class="profile-card">
+                        <div class="image">
+                            @if (creater.Image == null)
+                            {
+                                <img src="~/Images/Creaters/default.png" alt="">
+                            }
+                            else
+                            {
+                                <img src=~/Images/Creaters/@creater.Image alt="">
+                            }
                         </div>
-                        <div class="contact-card">
-                            <i class="contact-icon fas fa-phone"></i>
-                            <div class="card-content">
-                                <h3>Phone Number</h3>
-                                <span>+905551234567</span>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <i class="contact-icon fas fa-map-marker-alt"></i>
-                            <div class="card-content">
-                                <h3>Location</h3>
-                                <span>Turkey</span>
+                        <div class="profile">
+                            <h4>@creater.Name @creater.Surname</h4>
+                            <div class="mb-4">
+                                <ul class="list-unstyled list-inline">
+                                    <li class="list-inline-item display-5"><a target="_blank" href="@creater.Youtube"><i class="fab fa-youtube"></i></a></li>
+                                    <li class="list-inline-item display-5"><a target="_blank" href="@creater.Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li class="list-inline-item display-5"><a target="_blank" href="@creater.Github"><i class="fab fa-github"></i></a></li>
+                                    <li class="list-inline-item display-5"><a target="_blank" href="@creater.Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 msg">
-                    <form asp-action="ContactPage" asp-controller="Contact" method="post">
-                        <div class="mb-3">
-                            <label asp-for="Message.UserName" class="form-label">İsim</label>
-                            <input type="text" class="form-control" asp-for="Message.UserName" placeholder="İsminiz..">
-                            <span class="text-danger" asp-validation-for="Message.UserName"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Message.UserMail" class="form-label">Email</label>
-                            <input type="email" class="form-control" asp-for="Message.UserMail" placeholder="Emailiniz..">
-                            <span class="text-danger" asp-validation-for="Message.UserMail"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Message.Topic" class="form-label">Konu</label>
-                            <input type="text" class="form-control" asp-for="Message.Topic" placeholder="Konu..">
-                            <span class="text-danger" asp-validation-for="Message.Topic"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Message.Content" class="form-label">Mesajınız</label>
-                            <textarea class="form-control" asp-for="Message.Content" rows="3" placeholder="Mesajınız.."></textarea>
-                            <span class="text-danger" asp-validation-for="Message.Content"></span>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn2">GÖNDER</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            }
+
         </div>
     </div>
 </div>

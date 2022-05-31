@@ -151,6 +151,11 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   display: block;
 }
 
+.nav-link i {
+    width: 18px;
+    margin-right: 4px;
+}
+
 .sidebar .nav-item .dropdown-menu {
   position: absolute !important;
   -webkit-transform: none !important;

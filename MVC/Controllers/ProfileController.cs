@@ -1,5 +1,6 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Core.Utilities.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Identity;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MVC.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         private UserManager<User> _userManager;
